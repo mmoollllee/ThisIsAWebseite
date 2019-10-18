@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+   <head>
+
+      <title>A website</title>
+
+      <!-- TODO: Add Description -->
+      <meta name="description" content="">
+
+      <link rel="stylesheet" href="style.css">
+   </head>
+   <body>
+
+      <div id="container">
+
+   <div class="flex">
+      <h1>Hey!</h1>
+      <header class="top-right">
+         <p>I'm Moritz.<br>
+            From Germany.<br>
+            I create websites.<br>
+         </p>
+         <ul>
+               <li><a href="#" class="randomPhoneNumber">Call<br><small>Random Phone Number</small></a></li>
+               <li><a href="https://github.com/mmoollllee/">Github<br><small>worth a visit by 2k23</small></a></li>
+               <li><a href="&#109;&#097;&#105;&#108;&#116;&#111;&#058;&#115;&#112;&#097;&#109;&#064;&#109;&#111;&#114;&#105;&#116;&#122;&#045;&#103;&#114;&#097;&#102;&#046;&#100;&#101;">spam@moritz-graf.de<br><small>actually works</small></a></li>
+            </ul>
+      </header>
+   </div>
+
+   <main>
+      <p id="spanWords">This is a website. That's what I do. This one doesn't make sense. I did it anyway.<br>Let's see what comes next. Right now I attend Code Camp in Leipzig. I understand if you don't want to keep reading. This is really annoying.</p>
+   </main>
+
+   <footer>
+      Thank's for your attention!
+      <small>Made with ❤️ at <a href="https://codecampleipzig.de/">Code Camp Leipzig</a></small>
+   </footer>
+
+   </div>
+
+   </body>
+
+   <script>
+      function randomNumber(length) {
+         result = "";
+         for (var i = 0; i < length; i++) {
+            result += Math.floor(Math.random() * 10);
+         }
+         return result;
+      }
+
+      function randomPhoneNumber(className) {
+         var elements = document.getElementsByClassName(className);
+
+         Array.from(elements).forEach((element) => {
+            var phoneNumber = "tel:+49-" + randomNumber(4) + "-" + randomNumber(7);
+
+            element.setAttribute("href", phoneNumber);
+         });
+         
+      }
+
+      randomPhoneNumber("randomPhoneNumber");
+   </script>
+   <script>
+      function spanWords(idName) {
+         var element = document.getElementById(idName);
+         var str = "<span>" + element.innerHTML + "</span>";
+
+         // And remove dots         
+         str = str.replace(/\s/g, ' </span><span>');
+         str = str.replace(/'/g, '');
+         str = str.replace(/\./g, '<span class="dot">.</span>');
+
+         element.innerHTML = str;
+      }
+
+      spanWords("spanWords");
+   </script>
+</html>
