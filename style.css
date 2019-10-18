@@ -4,8 +4,8 @@ body {
    min-height: 100vh;
    margin: 0;
    padding: 0;
-   font-family: "Base Mono Wide OT Bold";
-   font-weight: 900;
+   font-family: base-mono-wide, monospace;
+   font-weight: 700;
    letter-spacing: -1vw;
    background: #000;
 }
